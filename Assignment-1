@@ -1,0 +1,200 @@
+import os
+import sys
+import math
+import random
+import datetime
+# HELLO WORLD
+print("Anything,you find cool")
+# ADD NUMBERS AND CONCAT STRINGS
+#2.1
+a=5
+b=9
+sum_=a+b
+print(sum_)
+#2.2
+c="I am"
+d="Ironman"
+result=c+d
+print(result)
+#2.3
+concat=str(a)+c
+print(concat)
+#IF ELSE
+#3.1
+n=int(input("Enter the number to check: "))
+if n>0:
+    print("positive")
+elif n<0:
+    print("negative")
+else:
+    print("you entered zero")
+#3.2
+number=int(input("Enter the number to check: "))
+if number%2==0:
+    print("EVEN")
+else:
+    print("ODD")
+#LOOPS
+#4.1
+for x in range(1,11):
+    print(x)
+#4.2
+k=1
+while k<=10:
+    print(k)
+    k+=1
+#4.3
+sumRange=0
+for x in range(1,101):
+    sumRange+=x
+print("The sum of Range 1->100 is :",sumRange)
+# DATA STRUCTURES
+#5.1
+mylist=[1,2,3,4,5]
+maxNum=max(mylist)
+minNum=min(mylist)
+#5.2
+myDict={
+    90:"A",
+    80:"A-",
+    70:"B"
+}
+print(myDict[70])
+#5.3
+mylist.sort()
+print(mylist)
+mylist.sort(reverse=True)
+print(mylist)
+#5.4
+myDict2={
+    33:"Fail",
+    45:"C"
+}
+dict3=myDict|myDict2
+print(dict3)
+# STRINGS
+#6.1
+givenStr = "Cognitive Computing"
+vowel = "aeiouAEIOU"
+count_vowel = sum(givenStr.count(v) for v in vowel)
+print(count_vowel)
+#6.2
+str = "Cognitive Computing"
+rev = ''.join(reversed(str))
+print(rev)
+#6.3
+if str==rev:
+    print("PALINDROME")
+else:
+    print("Not a palindrome")
+# FILE HANDLING
+#7.1
+#filee=open("labText","x")
+filee=open("labText.txt","w")
+filee.write("This is a newly created Text file")
+filee.close()
+filee=open("labText.txt","r")
+print(filee.read())
+filee.close()
+#7.2
+filee=open("labText.txt","a")
+filee.write(" on part 7.2")
+filee.close()
+filee=open("labText.txt","r")
+print(filee.read())
+filee.close()
+#7.3
+with open("textFile.txt", 'r') as fp:
+	lines = len(fp.readlines())
+	print('Total Number of lines:', lines)
+# EXCEPTION HANDLING
+#8.1
+i=0
+try: 
+  x=9/i
+  print(x)
+except:
+  print("Tried to diivide by zero")
+#8.2
+num = input("Please enter a number: ")
+try:    
+    number = int(num)
+    print(f"You entered the number: {number}")
+except ValueError:
+    print(f"Invalid input '{num}' ")
+#8.3
+try: 
+  x=9/i
+  print(x)
+except:
+  print("Something went wrong")
+finally:
+  print("Moving on")
+# RANDOM NUMBERS
+#9.1
+i=1
+while(i<=5):
+    print(random.randrange(1, 101))
+    i+=1
+#9.2
+no=random.random()
+if no <= 1:
+    print("False")
+for i in range(2, int(math.sqrt(no)) + 1):
+    if no % i == 0:
+        print("not PRime")
+    if i==int(math.sqrt(no)):
+        print("PRime")
+#9.3
+while True:
+    choice=int(input("1 for continuing, 0 for stopping "))
+    if choice==0:
+        break
+    elif choice==1:
+        print("Rolling die")
+        print(random.randrange(1,7))
+    else:
+        print("Wrong choice")
+        continue
+#9.4
+arr = [1, 2, 3, 4, 5]
+random.shuffle(arr)
+print(arr)
+#9.5
+list1 = [1, 2, 3, 4, 5, 6]
+print(random.choice(list1))
+#9.6
+length=int(input("Enter length of passwrd "))
+passwd =random.randint(10**(length-1),10**length)
+print(passwd)
+#9.7
+cards = ["Diamonds", "Spades", "Hearts", "Clubs"] 
+ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"] 
+
+card = random.choices(cards) 
+rank = random.choices(ranks) 
+
+print(f"The {rank} of {card}") 
+# COMMAND LINE ARGUMENTS
+#10.1
+x=int(sys.argv[1])
+y=int(sys.argv[2])
+sum=x+y
+print("The addition is :",sum)
+#10.2
+cmdStr=sys.argv[1]
+print(f"its length is {len(cmdStr)}")
+# USE OF LIBRARIES
+#11.1
+findSqrt=int(input("enter number to find sqrt of:"))
+print("Sqrt is : ",math.sqrt(findSqrt))
+#11.2
+currTime = datetime.datetime.now()
+print(currTime)
+#11.3
+current_working_directory = os.getcwd()
+content = os.listdir(current_working_directory) 
+print("current working directory has :",content)
+    
+
+
